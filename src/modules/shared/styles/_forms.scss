@@ -1,0 +1,44 @@
+.form {
+
+  width: 100%;
+  height: auto;
+
+  background-color: rgba(transparent, .25);
+
+  padding: 1rem;
+
+  &__item {
+    display: inline-block;
+    margin: 1rem;
+    padding-top: 2rem;
+
+    width: 100%;
+
+    position: relative;
+
+    color: color($colors, white);
+
+    &--label {
+      position: absolute;
+      top: 0;
+      transition: all .7s;
+    }
+
+    &--input {
+      background-color: rgba(color($colors, white), .30);
+      width: 100%;
+
+      &::-webkit-input-placeholder {
+        color: color($colors, white);
+      }
+    }
+
+    &--input:placeholder-shown + &--label {
+      transform: translate(.5rem, 1rem);
+      visibility: hidden;
+      opacity: 0;
+    }
+
+  }
+
+}

@@ -1,0 +1,34 @@
+.btn {
+
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(color($colors, dark), .8);
+  color: color($colors, white);
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(color($colors, dark), .2);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(color($colors, dark), .2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &--primary {
+    background-color: color($colors, primary);
+  }
+
+  &--secondary {
+    background-color: color($colors, secondary);
+  }
+
+  &--tertiary {
+    //background-color: color($colors, tertiary);
+  }
+}
