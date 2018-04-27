@@ -6,18 +6,8 @@
   color: color($colors, white);
 
   &:active {
-    transform: translateY(-1px);
+    transform: translateY(0.1rem);
     box-shadow: 0 .5rem 1rem rgba(color($colors, dark), .2);
-  }
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(color($colors, dark), .2);
-
-    &::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
-    }
   }
 
   &--primary {
