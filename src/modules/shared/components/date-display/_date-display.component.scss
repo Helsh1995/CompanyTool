@@ -2,9 +2,12 @@ date-display {
 
   .date-display {
 
+    padding: 1rem 0;
+
     &__month {
 
       margin-top: 0;
+      padding-bottom: 2rem;
       text-align: center;
       color: color($colors, secondary);
 

@@ -108,11 +108,9 @@ export class DateDisplayComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => {
       const index = this.dates.findIndex(d => d.isSame(this.selectedDate, 'd'));
 
-      setTimeout(() => {
-        this.slides.lockSwipes(false);
-        this.slides.slideTo(index - Math.floor(this.slidesPerView / 2));
-        this.slides.lockSwipes(true);
-      }, 500);
+      this.slides.lockSwipes(false);
+      this.slides.slideTo(index - Math.floor(this.slidesPerView / 2));
+      this.slides.lockSwipes(true);
 
     }, 200);
   }
