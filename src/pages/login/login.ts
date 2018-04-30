@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage} from 'ionic-angular';
+import {AppNavigationService} from "../../modules/shared/services/navigation.service";
+import {PAGE} from "../../utils/pages";
 
 @IonicPage()
 @Component({
@@ -8,7 +10,11 @@ import {IonicPage} from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor() {
+  constructor(private appNavService: AppNavigationService) {
+  }
+
+  public login(): void {
+    this.appNavService.pushPage(PAGE.TIME_LOGGING);
   }
 
 }

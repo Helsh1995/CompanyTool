@@ -1,0 +1,20 @@
+<div class="date-display">
+
+  <h1 class="date-display__month">{{selectedDate.format('MMMM')}}</h1>
+
+  <div class="date-display__dates">
+
+    <ion-icon class="date-display__dates__arrow date-display__dates__arrow--left" name="arrow-back"></ion-icon>
+    <!--ionic swiper-->
+
+    <ion-slides class="date-display__dates__all-dates" [slidesPerView]="slidesPerView">
+      <ion-slide *ngFor="let date of dates" [ngClass]="{'active': date.isSame(selectedDate, 'd')}">
+        {{date.format('DD')}}
+      </ion-slide>
+    </ion-slides>
+
+    <ion-icon class="date-display__dates__arrow date-display__dates__arrow--right" name="arrow-forward"></ion-icon>
+
+  </div>
+
+</div>

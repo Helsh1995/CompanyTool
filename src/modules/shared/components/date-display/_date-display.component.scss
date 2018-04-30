@@ -1,0 +1,48 @@
+date-display {
+
+  .date-display {
+
+    &__month {
+
+      margin-top: 0;
+      text-align: center;
+
+    }
+
+    &__dates {
+
+      position: relative;
+      height: 5rem;
+
+      &__arrow {
+
+        position: absolute;
+        font-size: 3rem;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &--left {
+          left: 2rem;
+        }
+
+        &--right {
+
+          right: 2rem;
+
+        }
+
+      }
+
+      &__all-dates {
+        padding: 0 3rem;
+
+        .active {
+          background-color: pink;
+        }
+      }
+
+    }
+
+  }
+
+}
