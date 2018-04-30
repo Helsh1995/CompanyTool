@@ -6,6 +6,7 @@ date-display {
 
       margin-top: 0;
       text-align: center;
+      color: color($colors, secondary);
 
     }
 
@@ -20,6 +21,7 @@ date-display {
         font-size: 3rem;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 999999;
 
         &--left {
           left: 2rem;
@@ -37,7 +39,8 @@ date-display {
         padding: 0 3rem;
 
         .active {
-          background-color: pink;
+          color: color($colors, secondary);
+          font-size: 4rem;
         }
       }
 

@@ -33,11 +33,28 @@ export class DateDisplayComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this._onResizeWindow();
-    this._slideToToday();
+    this._slideToSelectedDate();
+
+    this.slides.lockSwipes(true);
   }
 
   ngOnDestroy() {
     window.removeEventListener('resize', this._onResizeWindow);
+  }
+
+  public selectDate(date: moment.Moment): void {
+    this.selectedDate = date;
+    this._getDates();
+  }
+
+  public swipeLeft(): void {
+    this.selectedDate.add(-1, 'd');
+    this._getDates();
+  }
+
+  public swipeRight(): void {
+    this.selectedDate.add(1, 'd');
+    this._getDates();
   }
 
   private _getDates(): void {
@@ -47,9 +64,21 @@ export class DateDisplayComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dates.push(...this._getDatesAfter());
 
     this.dates.sort((a, b) => a.isBefore(b) ? -1 : 1);
+
+    this._slideToSelectedDate();
   }
 
   private _getDatesBefore(): moment.Moment[] {
+    const dates: moment.Moment[] = [];
+
+    for (let i = 1; i <= DAYS_MARGIN; i++) {
+      dates.push(moment(this.selectedDate).add(-i, 'd'));
+    }
+
+    return dates;
+  }
+
+  private _getDatesAfter(): moment.Moment[] {
     const dates: moment.Moment[] = [];
 
     for (let i = 1; i <= DAYS_MARGIN; i++) {
@@ -57,18 +86,6 @@ export class DateDisplayComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     return dates;
-
-  }
-
-  private _getDatesAfter(): moment.Moment[] {
-    const dates: moment.Moment[] = [];
-
-    for (let i = 1; i <= DAYS_MARGIN; i++) {
-      dates.push(moment(this.selectedDate).subtract(i, 'd'));
-    }
-
-    return dates;
-
   }
 
   private _onResizeWindow = () => {
@@ -85,14 +102,16 @@ export class DateDisplayComponent implements OnInit, AfterViewInit, OnDestroy {
     this.slides.update();
     this.slides.resize();
 
-  }
+  };
 
-  private _slideToToday(): void {
+  private _slideToSelectedDate(): void {
     setTimeout(() => {
       const index = this.dates.findIndex(d => d.isSame(this.selectedDate, 'd'));
 
       setTimeout(() => {
+        this.slides.lockSwipes(false);
         this.slides.slideTo(index - Math.floor(this.slidesPerView / 2));
+        this.slides.lockSwipes(true);
       }, 500);
 
     }, 200);
