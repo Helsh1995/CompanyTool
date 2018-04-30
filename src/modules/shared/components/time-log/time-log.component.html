@@ -1,0 +1,33 @@
+<div class="time-log" >
+
+  <div class="time-log__type" [ngStyle]="{'background-color': timeLog?.type?.color}"></div>
+
+  <div class="time-log__dates">
+    <div class="time-log__dates time-log__dates--start">
+      {{timeLog?.start.format('HH:mm')}}
+    </div>
+
+    <div class="time-log__dates time-log__dates--stop">
+
+      <span *ngIf="timeLog?.stop">
+        {{timeLog.stop.format('HH:mm')}}
+      </span>
+
+      <span *ngIf="!timeLog?.stop">
+      PENDING ...
+    </span>
+
+    </div>
+  </div>
+
+  <div class="time-log__info">
+    <div class="time-log__info time-log__info--client">
+      {{timeLog?.client?.name}}
+    </div>
+
+    <div class="time-log__info time-log__info--description">
+      {{timeLog?.description}}
+    </div>
+  </div>
+
+</div>

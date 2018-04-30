@@ -3,10 +3,14 @@
   <div class="time-logging">
 
     <div class="time-logging__date">
-      <date-display></date-display>
+      <date-display [(selectedDate)]="selectedDate"
+                    (selectedDateChange)="onSelectedDateChanges()">
+      </date-display>
     </div>
 
-    <div class="time-logging__logs"></div>
+    <div class="time-logging__logs">
+      <time-log *ngFor="let timeLog of timeLogs" [timeLog]="timeLog"></time-log>
+    </div>
 
   </div>
 
