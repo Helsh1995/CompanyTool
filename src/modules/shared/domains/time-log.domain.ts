@@ -17,9 +17,6 @@ export class TimeLog {
     this.id = data && data.id ? data.id : null;
     this.type = data && data.type ? new TimeLogType(data.type) : null;
 
-
-    console.log(data.start);
-
     this.start = data && data.start ? moment(data.start) : moment();
     this.stop = data && data.stop ? moment(data.stop) : null;
 

@@ -13,7 +13,6 @@ export class MockingHttpInterceptor implements HttpInterceptor {
       console.log('MOCKING', req);
 
       if (req.url.indexOf('/time-logs/all') != -1) {
-        console.log(timeLogs);
         return Observable.of(new HttpResponse({status: 200, body: JSON.stringify(timeLogs)}));
       }
 

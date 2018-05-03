@@ -1,0 +1,11 @@
+<div class="time-line">
+
+  <div class="time-line__time-slot" *ngFor="let timeSlot of timeSlots;let first = first;">
+
+    <span class="time-line__time-slot--from" *ngIf="first">{{timeSlot.from}}</span>
+
+    <span class="time-line__time-slot--until">{{timeSlot.until}}</span>
+
+  </div>
+
+</div>

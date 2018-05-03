@@ -30,7 +30,6 @@ export class TimeLoggingPage {
       .subscribe(
         (result) => {
           this.timeLogs = result;
-          console.log(this.timeLogs);
         },
         () => {
         });

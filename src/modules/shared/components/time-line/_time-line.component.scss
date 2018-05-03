@@ -1,0 +1,26 @@
+time-line {
+
+  .time-line {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__time-slot {
+      width: 150px;
+
+      display: flex;
+      justify-content: space-between;
+
+      &--from {
+
+      }
+
+      &--until {
+
+      }
+    }
+
+  }
+
+}

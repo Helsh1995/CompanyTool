@@ -9,8 +9,9 @@ import {TimeLoggingService} from "./services/time-logging.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MockingHttpInterceptor} from "../../http-interceptors/mocking.interceptor";
 import {TimeLogComponent} from "./components/time-log/time-log.component";
+import {TimeLineComponent} from "./components/time-line/time-line.component";
 
-const components = [DateDisplayComponent, TimeLogComponent];
+const components = [DateDisplayComponent, TimeLogComponent, TimeLineComponent];
 const services = [StartupPageService, AppNavigationService, ApiService, TimeLoggingService];
 const modules = [CommonModule, IonicModule, HttpClientModule];
 const interceptors = [

@@ -25,7 +25,6 @@ export class TimeLoggingService {
 
     return this.apiService
       .makeRequest("GET", sprintf(API_ENDPOINT.ALL_TIME_LOGS, date.format('DD-MM-YYYY')))
-      .do(res => console.log(res))
       .map((result) => JSON.parse(result).map((log) => new TimeLog(log)))
       .do((timeLogs) => this._timeLogs.push({date, timeLogs}));
 
