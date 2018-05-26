@@ -1,0 +1,23 @@
+time-line {
+
+  .time-line {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: color($colors, white);
+    background-color: rgba(color($colors, secondary), .95);
+    width: 60px;
+
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+
+    &__time {
+      margin: 1rem;
+    }
+
+  }
+
+}

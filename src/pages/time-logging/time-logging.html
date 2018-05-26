@@ -1,16 +1,10 @@
 <ion-content>
 
-  <div class="time-logging no-scroll">
+  <div class="time-logging">
 
-    <div class="time-logging__date">
-      <date-display [(selectedDate)]="selectedDate"
-                    (selectedDateChange)="onSelectedDateChanges()">
-      </date-display>
-    </div>
+    <time-line></time-line>
 
-    <div class="time-logging__logs">
-      <time-line [logs]="timeLogs"></time-line>
-    </div>
+    <dates-selecting></dates-selecting>
 
   </div>
 

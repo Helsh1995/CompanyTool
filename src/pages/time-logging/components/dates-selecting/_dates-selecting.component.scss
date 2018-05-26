@@ -1,0 +1,84 @@
+dates-selecting {
+
+  width: 100%;
+
+  .dates-selecting {
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &__month {
+      font-size: 5rem;
+      color: color($colors, secondary);
+
+      position: absolute;
+      left: 50%;
+      top: 1rem;
+
+      transform: translateX(-50%);
+    }
+
+    &__week {
+      color: color($colors, white);
+      background-color: color($colors, primary);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+      position: fixed;
+      right: 0;
+
+      ion-icon {
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem 0
+      }
+
+    }
+
+    &__day {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 5rem;
+      flex: 1;
+
+      position: relative;
+
+      font-size: 2rem;
+
+      &--day {
+      }
+
+      &--date {
+
+      }
+
+      &.selected {
+        background-color: color($colors, secondary);
+
+        &::before {
+          content: '';
+          background-color: color($colors, secondary);
+          width: 30px;
+          height: 30px;
+
+          position: absolute;
+          left: -10px;
+          transform: rotate(45deg);
+
+          z-index: -1;
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -6,27 +6,12 @@ page-time-logging {
     background-position: center;
 
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100vh;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
-    &__date {
-
-      background-color: rgba(white, .5);
-      padding-top: 2rem;
-
-    }
-
-    &__logs {
-
-      height: 100%;
-      overflow-y: scroll;
-      padding: 1rem 2rem;
-
-      background-color: rgba(color($colors, secondary), .4);
-
-    }
   }
 
 }
